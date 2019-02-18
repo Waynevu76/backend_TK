@@ -49,11 +49,11 @@ app.use("/api/auth", authRouter);
 app.use("/api/images", imageRouter);
 app.use("/api/users", userRouter);
 
-// app.use(express.static('./public'));
+app.use(express.static('./public'));
 
-// app.get('/', (req,res) => {
-//   res.sendFile('./public/index.html');
-// });
+app.get('/', (req,res) => {
+  res.sendFile('./public/index.html');
+});
 
 mongoose.connect(config.mongoPath, { useNewUrlParser: true }, err => {
   if (err) console.error(err);
