@@ -55,7 +55,7 @@ app.get('/', (req,res) => {
   res.sendFile('./public/index.html');
 });
 
-mongoose.connect(config.mongoPath, err => {
+mongoose.connect(config.mongoPath, { useNewUrlParser: true }, err => {
   if (err) console.error(err);
   else console.log("Database connect successful");
 });
